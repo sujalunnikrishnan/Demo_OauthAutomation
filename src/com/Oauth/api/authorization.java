@@ -48,7 +48,7 @@ public class authorization {
 
 		System.out.println("Course Title is " + getcourseResponse.getCourses().getApi().get(1).getCourseTitle());
 
-//		
+		System.out.println("-----------------------------------");
 //		}
 		System.out.println("-----------------------------------");
 		GetCourse gcResponse = given().queryParam("access_token", accessToken).when().log().all()
