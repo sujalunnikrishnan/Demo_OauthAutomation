@@ -63,10 +63,9 @@ public class authorization {
 				System.out.println("    Price: " + course.getPrice());
 			}
 			System.out.println("-----------------------------------");
-			System.out.println("-----------------------------------");
+
 			System.out.println("--------------------123123123--------------");
-			System.out.println("-----------------------gfdgdgdfgdfg------------");
-			System.out.println("----------------------545555555555555-------------");
+		
 		}
 
 		// Print price corresponding to Appium
