@@ -58,13 +58,18 @@ public class authorization {
 			List<Course> courseList = entry.getValue();
 
 			System.out.println("Category: " + category);
-			for (Course course : courseList) {
+			int totalprice = 0 ;
+			for (Course course : courseList)
+			{
+			    
 				System.out.println("    Title: " + course.getCourseTitle());
 				System.out.println("    Price: " + course.getPrice());
+				
+						totalprice = course.getPrice() + totalprice;  
 			}
-			System.out.println("-----------------------------------");
+			System.out.println("Total price is" + totalprice);
 
-			System.out.println("--------------------123123123--------------");
+			System.out.println("----------------------------------");
 		
 		}
 
