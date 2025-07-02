@@ -63,6 +63,9 @@ public class authorization {
 				System.out.println("    Price: " + course.getPrice());
 			}
 			System.out.println("-----------------------------------");
+
+			System.out.println("--------------------123123123--------------");
+		
 		}
 
 		// Print price corresponding to Appium
@@ -71,6 +74,7 @@ public class authorization {
 			for (Course course : courseList) {
 				if (course.getCourseTitle().contains("Appium")) {
 					System.out.println("    Price for Appium: " + course.getPrice());
+			
 				}
 
 			}
