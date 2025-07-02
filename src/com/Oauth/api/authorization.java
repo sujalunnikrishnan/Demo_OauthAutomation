@@ -48,8 +48,7 @@ public class authorization {
 
 		System.out.println("Course Title is " + getcourseResponse.getCourses().getApi().get(1).getCourseTitle());
 
-//		
-//		}
+
 		System.out.println("-----------------------------------");
 		GetCourse gcResponse = given().queryParam("access_token", accessToken).when().log().all()
 				.get("https://rahulshettyacademy.com/oauthapi/getCourseDetails").as(GetCourse.class);
@@ -76,6 +75,9 @@ public class authorization {
 			}
 
 		}
+		
+		
+		
 
 	}
 
