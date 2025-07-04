@@ -37,6 +37,8 @@ public class authorization {
 //		.asString();
 //		System.out.println("Second Response is " +Response2);
 
+		
+		
 // Get info from Response as JAVA POJO CLASS
 		getCourseDetails getcourseResponse = given().queryParam("access_token", accessToken).when().log().all()
 				.get("https://rahulshettyacademy.com/oauthapi/getCourseDetails").as(getCourseDetails.class);
@@ -49,39 +51,47 @@ public class authorization {
 		System.out.println("Course Title is " + getcourseResponse.getCourses().getApi().get(1).getCourseTitle());
 
 
-		System.out.println("-----------------------------------");
+		System.out.println("-----------------------------------------------------------------------------------------------------");
 
 		System.out.println("-----------------------------------");
+		
+		
 		GetCourse gcResponse = given().queryParam("access_token", accessToken).when().log().all()
 				.get("https://rahulshettyacademy.com/oauthapi/getCourseDetails").as(GetCourse.class);
+		
 		for (Map.Entry<String, List<Course>> entry : gcResponse.getCourses().entrySet()) {
 			String category = entry.getKey();
+			
 			List<Course> courseList = entry.getValue();
 
 			System.out.println("Category: " + category);
+			
 			for (Course course : courseList) {
 				System.out.println("    Title: " + course.getCourseTitle());
 				System.out.println("    Price: " + course.getPrice());
 			}
+			
+			
 			System.out.println("-----------------------------------");
-
-			System.out.println("--------------------123123123--------------");
-		
 		}
 
 		// Print price corresponding to Appium
 		for (Map.Entry<String, List<Course>> entry : gcResponse.getCourses().entrySet()) {
 			List<Course> courseList = entry.getValue();
-			for (Course course : courseList) {
-				if (course.getCourseTitle().contains("Appium")) {
-					System.out.println("    Price for Appium: " + course.getPrice());
 			
+			for (Course course : courseList) 
+			{
+				if (course.getCourseTitle().contains("Appium")) 
+				{
+					System.out.println("    Price for Appium: " + course.getPrice());
 				}
-
 			}
-
 		}
 		
+
+		//Print the data from RESPONSE
+		
+		System.out.println(gcResponse.getLinkedIn());
 		
 		
 
